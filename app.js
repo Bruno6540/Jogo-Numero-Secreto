@@ -20,6 +20,7 @@ function verificarChute() {
     let chute = document.querySelector('input').value;
     
     if (chute == numeroSecreto) {
+        alert('Parabéns')
         exibirTextoNaTela('h1', 'Acertou!');
         let palavraTentativa = tentativas > 1 ? 'tentativas!': 'tentativa!';
         let mensagemTentativas = `você descobriu o número secreto com ${tentativas} ${palavraTentativa}`;
@@ -27,8 +28,10 @@ function verificarChute() {
         document.getElementById('reiniciar').removeAttribute('disabled');
     } else {
         if (chute > numeroSecreto) {
+            alert('O número secreto é menor');
             exibirTextoNaTela('p', 'O número secreto é menor');
         } else {
+            alert('O número secreto é maior');
             exibirTextoNaTela('p', 'O número secreto é maior');
         }
         tentativas++;
